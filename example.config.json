@@ -1,0 +1,14 @@
+{
+  "discord": {
+    "webhook_url": "https://discord.com/api/webhooks/1234567890/abcdefg",
+    "emotes": [
+      "<:eaistrWatashi:870676449886105710>",
+      "<:eaistrSouka:870676448866873374>",
+      "<:eaistrBaby:870676447260442684>"
+    ]
+  },
+  "twitch": {
+    "channel_name": "eai_stream",
+    "emote_prefix": "eaistr"
+  }
+}
