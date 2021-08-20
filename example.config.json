@@ -10,5 +10,9 @@
   "twitch": {
     "channel_name": "eai_stream",
     "emote_prefix": "eaistr"
+  },
+  "mastodon": {
+    "host": "https://stellaria.network",
+    "access_token": ""
   }
 }

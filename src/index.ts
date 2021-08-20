@@ -2,6 +2,7 @@ import { ChatClient } from "dank-twitch-irc";
 import { post } from "./webhook";
 import { config } from "./config";
 import { emoteResolver } from "./emote";
+import { toot } from "./mastodon";
 
 const client = new ChatClient();
 
@@ -24,6 +25,19 @@ client.on("PRIVMSG", (msg) => {
 
     return `${displayName} (${senderUsername})`;
   })();
+
+  if (name === "StreamElements" && msg.messageText.includes("を配信開始")) {
+    if (config.mastodon === undefined) return;
+
+    const match = msg.messageText.match(
+      /(?<game>.+)を配信開始「(?<streamTitle>.+)」/
+    );
+    if (match === null) return;
+
+    const { game, streamTitle } = match.groups!;
+    const message = config.mastodon.message.replaceAll("__GAME__", game);
+    toot(message);
+  }
 
   const body = msg.messageText
     .replace(/<(.+)>/g, "`<$1>`")

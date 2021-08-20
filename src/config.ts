@@ -20,4 +20,13 @@ if (config.twitch.emote_prefix === undefined) {
   throw new Error("config.twitch.emote_prefix is not set!");
 }
 
+if (config.mastodon !== undefined) {
+  if (config.mastodon.host === undefined) {
+    throw new Error("config.mastodon.host is not set!");
+  }
+  if (config.mastodon.access_token === undefined) {
+    throw new Error("config.mastodon.access_token is not set!");
+  }
+}
+
 export { config };
