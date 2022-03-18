@@ -13,6 +13,7 @@
   },
   "mastodon": {
     "host": "https://stellaria.network",
-    "access_token": ""
+    "access_token": "",
+    "message": "__GAME__やります https://www.twitch.tv/eai_stream"
   }
 }
