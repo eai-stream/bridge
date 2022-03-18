@@ -10,6 +10,7 @@ client.on("ready", () => console.log("Successfully connected to chat"));
 client.on("close", (error) => {
   if (error != null) {
     console.error("Client closed due to error", error);
+    process.exit(1);
   }
 });
 
